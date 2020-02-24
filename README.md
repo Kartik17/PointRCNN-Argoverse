@@ -1,19 +1,6 @@
 # PointRCNN -- Modified for Argoverse/Custom Dataset
 
-## Orignal Paper --> PointRCNN: 3D Object Proposal Generation and Detection from Point Cloud
-![teaser](https://github.com/sshaoshuai/PointRCNN/blob/master/doc/teaser.png)
-
-Code release for the paper **PointRCNN:3D Object Proposal Generation and Detection from Point Cloud**, CVPR 2019.
-
-**Authors**: [Shaoshuai Shi](https://sshaoshuai.github.io/), [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/), [Hongsheng Li](http://www.ee.cuhk.edu.hk/~hsli/).
-
-[[arXiv]](https://arxiv.org/abs/1812.04244)&nbsp;  [[Project Page]](#)&nbsp;
-
-## Introduction
-In this work, we propose the PointRCNN 3D object detector to directly generated accurate 3D box proposals from raw point cloud in a bottom-up manner, which are then refined in the canonical coordinate by the proposed bin-based 3D box regression loss. 
-To the best of our knowledge, PointRCNN is **the first two-stage 3D object detector** for 3D object detection by using only the raw point cloud as input. PointRCNN is evaluated on the KITTI dataset and achieves state-of-the-art performance on the KITTI 3D object detection [leaderboard](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) among all published works at the time of submission.
-
-## For more details of PointRCNN, please refer to [the original paper](https://arxiv.org/abs/1812.04244) or the author git [project page](#).
+### For more details of PointRCNN, please refer to [the original paper](https://arxiv.org/abs/1812.04244) or the author git [project page](#).
 
 ## Installation
 ### Requirements
@@ -39,9 +26,12 @@ c. Build and install the `pointnet2_lib`, `iou3d`, `roipool3d` libraries by exec
 ```shell
 sh build_and_install.sh
 ```
+d. Install Argoverse API.
 
 ## Dataset preparation
+Arrange all training logs of Argoverse dataset, inside in a single folder. Copy the address of that directory to cfg.DATA_PATH in yaml file. Also install argoverse API.
 
+data_loader = ArgoverseTrackingLoader(os.path.join(root_dir))
 
 ## Pretrained model
 ### Quick demo
@@ -90,5 +80,7 @@ Suppose you have a well-trained RPN model saved at `output/rpn/default/ckpt/chec
 ```
 python train_rcnn.py --cfg_file cfgs/default.yaml --batch_size 4 --train_mode rcnn --epochs 70  --ckpt_save_interval 2 --rpn_ckpt ../output/rpn/default/ckpt/checkpoint_epoch_200.pth
 ```
+
+## Evaluation -->(Currently the model is for detecting a SINGLE CLASS)
 
 ### Ongoing Work, and also I haven't published the original paper or the original code, it's just an extension of it to train and test on other datasets.
