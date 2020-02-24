@@ -91,4 +91,4 @@ Suppose you have a well-trained RPN model saved at `output/rpn/default/ckpt/chec
 python train_rcnn.py --cfg_file cfgs/default.yaml --batch_size 4 --train_mode rcnn --epochs 70  --ckpt_save_interval 2 --rpn_ckpt ../output/rpn/default/ckpt/checkpoint_epoch_200.pth
 ```
 
-### Ongoing Work, and also I haven't published the original paper or the original code, it's just an extension of it t train and test on other datasets.
+### Ongoing Work, and also I haven't published the original paper or the original code, it's just an extension of it to train and test on other datasets.
