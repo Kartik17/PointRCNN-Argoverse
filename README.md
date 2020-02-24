@@ -29,10 +29,11 @@ sh build_and_install.sh
 d. Install Argoverse API.
 
 ## Dataset preparation
-Arrange all training logs of Argoverse dataset, inside in a single folder. Copy the address of that directory to cfg.DATA_PATH in yaml file. Also install argoverse API.
+Arrange all training logs of Argoverse dataset, inside in a single folder. Copy the address of that directory to `cfg.DATA_PATH` in yaml file. Also install argoverse API.
 
+```
 data_loader = ArgoverseTrackingLoader(os.path.join(root_dir))
-
+```
 ## Pretrained model
 ### Quick demo
 You could run the following command to evaluate the pretrained model: 
