@@ -39,7 +39,7 @@ data_loader = ArgoverseTrackingLoader(os.path.join(root_dir))
 ### Quick demo
 You could run the following command to evaluate the pretrained model: 
 ```
-python eval_rcnn.py --cfg_file cfgs/default.yaml --ckpt PointRCNN.pth --batch_size 1 --eval_mode rcnn 
+python eval_rcnn.py --cfg_file cfgs/argo_config_sampling_trainfull.yaml --rpn_ckpt rpn_ckpt.pth --rcnn_ckpt rcnn_ckpt.pth --batch_size 1 --eval_mode rcnn 
 ```
 
 ## Inference
