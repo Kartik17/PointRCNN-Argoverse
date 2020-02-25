@@ -33,7 +33,7 @@ d. Install Argoverse API.
 Arrange all training logs of Argoverse dataset, inside in a single folder. Copy the address of that directory to `cfg.DATA_PATH` in yaml file. Also install argoverse API.
 
 ```
-data_loader = ArgoverseTrackingLoader(os.path.join(root_dir))
+CFG.DATA_PATH = '../data/lidar' # Change this as per your path
 ```
 ## Pretrained model
 ### Quick demo
