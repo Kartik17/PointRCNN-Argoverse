@@ -10,6 +10,7 @@ __C.TAG = 'default'
 __C.CLASSES = 'Car'
 
 __C.INCLUDE_SIMILAR_TYPE = False
+__C.DATA_PATH = '/home/kartik17/datasets/argoverse-tracking/sample'
 
 # config of augmentation
 __C.AUG_DATA = True

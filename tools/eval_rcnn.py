@@ -8,7 +8,6 @@ from lib.net.point_rcnn import PointRCNN
 from lib.datasets.kitti_rcnn_dataset import KittiRCNNDataset
 import tools.train_utils.train_utils as train_utils
 from lib.utils.bbox_transform import decode_bbox_target
-from tools.kitti_object_eval_python.evaluate import evaluate as kitti_evaluate
 
 from lib.config import cfg, cfg_from_file, save_config_to_file, cfg_from_list
 import argparse

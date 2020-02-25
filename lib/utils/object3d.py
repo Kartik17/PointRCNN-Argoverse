@@ -10,9 +10,9 @@ def cls_type_to_id(cls_type):
 
 class Object3d(object):
     def __init__(self, line):
-        self.argo_to_kitti = np.array([[6.927964e-03, -9.999722e-01, -2.757829e-03],
-                                       [-1.162982e-03, 2.749836e-03, -9.999955e-01],
-                                       [9.999753e-01, 6.931141e-03, -1.143899e-03]])
+        self.argo_to_kitti = np.array([[0, -1, 0],
+                                       [0, 0, -1],
+                                       [1, 0, 0]])
         
         label = line
         self.src = line
