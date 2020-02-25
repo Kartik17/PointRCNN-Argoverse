@@ -87,7 +87,7 @@ python train_rcnn.py --cfg_file cfgs/default.yaml --batch_size 4 --train_mode rc
 Using Varun Agarwal BBox library scripts, I have used only two of the modules as I didn't required others. This gives the AP and Recall rate. Current IOU threshold at 0.7.
 
 ```
-python eval.py --prediction_path /prediction_dir --label_path /labels_dir
+python eval.py --prediction_path /prediction_dir --label_path /labels_dir --iou 0.6
 ```
 
 ### Ongoing Work, and also I haven't published the original paper or the original code, it's just an extension of it to train and test on other datasets.
