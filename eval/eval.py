@@ -98,6 +98,7 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--label_path', type = str,help = "Path of the labels")
 	parser.add_argument('--prediction_path', type = str,help = "Path of the prediction")
+	parser.add_argument('--iou', type =float, help = "IOU Threshold")
 
 	args = parser.parse_args()
 
@@ -108,4 +109,6 @@ if __name__ == '__main__':
 		print("prediction directory doesn't exist")
 
 	
-	MAP_graph(args.prediction_path, args.label_path)
+	#MAP_graph(args.prediction_path, args.label_path)
+	AP, recall = single_iou_evaluation(args.prediction_path, args.label_path, args.iou)
+	print('Avergae Precision:{} and Recall:{}'.format(AP, recall))
