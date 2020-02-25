@@ -1,0 +1,437 @@
+RPN(
+  (backbone_net): Pointnet2MSG(
+    (SA_modules): ModuleList(
+      (0): PointnetSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(3, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(16, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+          (1): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(3, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (1): PointnetSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(99, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+          (1): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(99, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(64, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(96, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (2): PointnetSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(259, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(128, 196, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(196, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(196, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+          (1): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(259, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(128, 196, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(196, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(196, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (3): PointnetSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(515, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+          (1): SharedMLP(
+            (layer0): Conv2d(
+              (conv): Conv2d(515, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer1): Conv2d(
+              (conv): Conv2d(256, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+            (layer2): Conv2d(
+              (conv): Conv2d(384, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (bn): BatchNorm2d(
+                (bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+              (activation): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+    )
+    (FP_modules): ModuleList(
+      (0): PointnetFPModule(
+        (mlp): SharedMLP(
+          (layer0): Conv2d(
+            (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+          (layer1): Conv2d(
+            (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+        )
+      )
+      (1): PointnetFPModule(
+        (mlp): SharedMLP(
+          (layer0): Conv2d(
+            (conv): Conv2d(608, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+          (layer1): Conv2d(
+            (conv): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+        )
+      )
+      (2): PointnetFPModule(
+        (mlp): SharedMLP(
+          (layer0): Conv2d(
+            (conv): Conv2d(768, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+          (layer1): Conv2d(
+            (conv): Conv2d(512, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+        )
+      )
+      (3): PointnetFPModule(
+        (mlp): SharedMLP(
+          (layer0): Conv2d(
+            (conv): Conv2d(1536, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+          (layer1): Conv2d(
+            (conv): Conv2d(512, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (bn): BatchNorm2d(
+              (bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (activation): ReLU(inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (rpn_cls_layer): Sequential(
+    (0): Conv1d(
+      (conv): Conv1d(128, 128, kernel_size=(1,), stride=(1,), bias=False)
+      (bn): BatchNorm1d(
+        (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (activation): ReLU(inplace=True)
+    )
+    (1): Dropout(p=0.5, inplace=False)
+    (2): Conv1d(
+      (conv): Conv1d(128, 1, kernel_size=(1,), stride=(1,))
+    )
+  )
+  (rpn_reg_layer): Sequential(
+    (0): Conv1d(
+      (conv): Conv1d(128, 128, kernel_size=(1,), stride=(1,), bias=False)
+      (bn): BatchNorm1d(
+        (bn): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (activation): ReLU(inplace=True)
+    )
+    (1): Dropout(p=0.5, inplace=False)
+    (2): Conv1d(
+      (conv): Conv1d(128, 76, kernel_size=(1,), stride=(1,))
+    )
+  )
+  (rpn_cls_loss_func): SigmoidFocalClassificationLoss()
+  (proposal_layer): ProposalLayer()
+)
+
+RCNNNet(
+  (SA_modules): ModuleList(
+    (0): PointnetSAModule(
+      (groupers): ModuleList(
+        (0): QueryAndGroup()
+      )
+      (mlps): ModuleList(
+        (0): SharedMLP(
+          (layer0): Conv2d(
+            (conv): Conv2d(131, 128, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+          (layer1): Conv2d(
+            (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+          (layer2): Conv2d(
+            (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+        )
+      )
+    )
+    (1): PointnetSAModule(
+      (groupers): ModuleList(
+        (0): QueryAndGroup()
+      )
+      (mlps): ModuleList(
+        (0): SharedMLP(
+          (layer0): Conv2d(
+            (conv): Conv2d(131, 128, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+          (layer1): Conv2d(
+            (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+          (layer2): Conv2d(
+            (conv): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+        )
+      )
+    )
+    (2): PointnetSAModule(
+      (groupers): ModuleList(
+        (0): GroupAll()
+      )
+      (mlps): ModuleList(
+        (0): SharedMLP(
+          (layer0): Conv2d(
+            (conv): Conv2d(259, 256, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+          (layer1): Conv2d(
+            (conv): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+          (layer2): Conv2d(
+            (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (activation): ReLU(inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (xyz_up_layer): SharedMLP(
+    (layer0): Conv2d(
+      (conv): Conv2d(5, 128, kernel_size=(1, 1), stride=(1, 1))
+      (activation): ReLU(inplace=True)
+    )
+    (layer1): Conv2d(
+      (conv): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+      (activation): ReLU(inplace=True)
+    )
+  )
+  (merge_down_layer): SharedMLP(
+    (layer0): Conv2d(
+      (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+      (activation): ReLU(inplace=True)
+    )
+  )
+  (cls_layer): Sequential(
+    (0): Conv1d(
+      (conv): Conv1d(512, 256, kernel_size=(1,), stride=(1,))
+      (activation): ReLU(inplace=True)
+    )
+    (1): Dropout(p=0.0, inplace=False)
+    (2): Conv1d(
+      (conv): Conv1d(256, 256, kernel_size=(1,), stride=(1,))
+      (activation): ReLU(inplace=True)
+    )
+    (3): Conv1d(
+      (conv): Conv1d(256, 1, kernel_size=(1,), stride=(1,))
+    )
+  )
+  (reg_layer): Sequential(
+    (0): Conv1d(
+      (conv): Conv1d(512, 256, kernel_size=(1,), stride=(1,))
+      (activation): ReLU(inplace=True)
+    )
+    (1): Dropout(p=0.0, inplace=False)
+    (2): Conv1d(
+      (conv): Conv1d(256, 256, kernel_size=(1,), stride=(1,))
+      (activation): ReLU(inplace=True)
+    )
+    (3): Conv1d(
+      (conv): Conv1d(256, 46, kernel_size=(1,), stride=(1,))
+    )
+  )
+  (proposal_target_layer): ProposalTargetLayer()
+)
