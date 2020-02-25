@@ -2,7 +2,7 @@ CLASSES: VEHICLE
 
 INCLUDE_SIMILAR_TYPE: False
 
-DATA_PATH: '/home/kartik17/datasets/argoverse-tracking/sample'
+DATA_PATH: '/home/argoverse-tracking/sample'
 
 # config of augmentation
 AUG_DATA: False
