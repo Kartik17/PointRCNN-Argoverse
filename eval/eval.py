@@ -9,6 +9,7 @@ from metrics import iou_3d
 import matplotlib.pyplot as plt
 from numba import jit
 
+PC_AREA_SCOPE = [[-40, 40], [-3,   3], [-60, 60]]
 
 def build_argo_object_list(label_data, classes_included = ['VEHICLE']):
 	label_objects_list = []
@@ -25,16 +26,28 @@ def build_argo_object_list(label_data, classes_included = ['VEHICLE']):
 	return label_objects_list
 
 
+def valid_box_filter(box3d_list):
+	valid_gt_list = []
+
+	for box3d in box3d_list:
+		if( ( (box3d.cx <= PC_AREA_SCOPE[2][1]) & (box3d.cx >= PC_AREA_SCOPE[2][0]) )\
+		  & ( (box3d.cy <= PC_AREA_SCOPE[0][1]) & (box3d.cy >= PC_AREA_SCOPE[0][0]) ) \
+		  & ( (box3d.cz <= PC_AREA_SCOPE[1][1]) & (box3d.cz >= PC_AREA_SCOPE[1][0])) ):
+			valid_gt_list.append(box3d)
+	print("Total_box:{}, Valid_Box:{}".format(len(box3d_list), len(valid_gt_list)))
+	return valid_gt_list
+
 def evaluate_labels(prediction_data,label_data, IOU_threshold = 0.7):
 	if (IOU_threshold > 1) & (IOU_threshold <= 0):
 		raise('IOU Threshold should be between 0 and 1')
 
 	TP = 0.0
-	total_gt = len(label_data)
+	valid_gt_list = valid_box_filter(label_data)
+	total_gt = len(valid_gt_list)
 	visited = [False for i in range(total_gt)]
 	
 	for predict_box in prediction_data:
-		for i,label_box in enumerate(label_data):
+		for i,label_box in enumerate(valid_gt_list):
 			IOU_3D = iou_3d(predict_box, label_box)
 			
 			if(IOU_3D > IOU_threshold) and (visited[i] == False):
@@ -42,6 +55,7 @@ def evaluate_labels(prediction_data,label_data, IOU_threshold = 0.7):
 				TP += 1.0
 
 	FP = len(prediction_data) - TP # As only VEHICLE class is detected
+	print("TP:{}, FP:{}".format(TP,FP))
 	return TP, FP, total_gt
 
 def MAP_graph(prediction_path, label_path):
